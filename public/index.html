@@ -1,34 +1,38 @@
-<!DOCTYPE html> <!--product-list.html-->
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>CSC300X Node</title>
-    <link rel="stylesheet" href="index.css" />
-    <script src="index.js" defer></script>
-  </head>
+<!DOCTYPE html>
+<html>
 
-  <body>
-    <div class="table-container">
-      <h1>Product Catalog</h1>
-      <hr />
-      <table id="product-table">
-        <caption>
-          Product List
-        </caption>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Price</th>
-        </tr>
-      </table>
-    </div>
-    <div id="product-detail-container">
-      <h2>Product Details</h2>
-      <button id="detail-close">Close</button>
-      <div id="product-detail"></div>
-    </div>
-  </body>
+<head>
+    <title>Jokebook</title>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <h1>Jokebook</h1>
+    <p id="random-joke"></p>
+    <form>
+        <label for="jokebook-category">Select a category:</label>
+        <select name = "category" id = "jokebook-category">
+            <option value="">--Please choose an option--</option>
+            <option value = "funnyJoke">Funny Joke</option>
+            <option value = "lameJoke">Lame Joke</option>
+        </select>
+    <button type = "submit">Get Jokes</button>
+</form>
+    <ul id="joke-list"></ul>
+
+    <form id="new-joke-form">
+        <label for="new-joke-category">Select new joke's category:</label>
+        <select name = "category" id="new-joke-category">
+            <option value="">--Please choose an option--</option>
+            <option value = "funnyJoke">Funny Joke</option>
+            <option value = "lameJoke">Lame Joke</option>
+        </select>
+        <label for="new-joke-text">Joke:</label>
+        <input type="text" id="new-joke-text" required>
+        <label for="new-joke-response">Response:</label>
+        <input type="text" id="new-joke-response" required>
+        <button type="submit">Add Joke</button>
+    </form>
+</body>
+
 </html>

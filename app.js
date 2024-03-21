@@ -1,6 +1,9 @@
 "use strict";
 const express = require("express");
+const cors = require('cors');
 const app = express();
+
+app.use(cors());
 
 // for application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true })); // built-in middleware
@@ -13,7 +16,7 @@ app.get("/", function (req, res) {
     res.send("Hello, World from Express!");
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, function () {
     console.log('Example app listening on port: '+PORT+"!");
 });
@@ -59,7 +62,7 @@ app.get('/jokebook/joke/:category', (req, res) => {
 
     if(jokebook[category]){
         const jokes = limit ? jokebook[category].slice(0, limit): jokebook[category];
-        res.json({jokes: joke});
+        res.json({jokes: jokes});
     }else{
         res.status(404).json({ error: 'No category listed for ${category}'});
     }
